@@ -19,11 +19,14 @@ Goals
 Right now, only simple messages are being printed. To add some variety, we
 still need:
 
-- verbose fake error messages
+- clear the screen (in a portable way) before running the process
+- occasionally trigger verbose fake error/success messages
 - progress percentages and/or bars of various kinds, to be triggered randomly
 - occasional walls-o'-text
 - very rarely, the screen should clear itself
 - more lines of plausible-looking generic terminology
+- give the user control over the speed at which messages print with an
+  optional parameter
 
 License
 =======
