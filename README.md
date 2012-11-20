@@ -32,6 +32,7 @@ still need:
 - more lines of plausible-looking generic terminology
 - give the user control over the speed at which messages print with an
   optional parameter
+- randomly create indented paragraphs and open lines
 
 License
 =======
