@@ -5,6 +5,11 @@ Look busy to the untrained eye! Spectral Installer prints a bunch of
 convincing-looking installer/compiler/download type bullshit to your terminal.
 Impress your technologically challenged friends!
 
+Use
+===
+
+After downloading, run "python path/to/spectral.py" in your terminal.
+
 Warning
 =======
 
