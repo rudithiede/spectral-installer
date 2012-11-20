@@ -1,0 +1,15 @@
+done
+completed
+success
+OK
+ok
+deferred processing now taking place
+failed, scheduling retry
+failed, check system error log
+checks passed
+[ OK ]
+terminating
+done, erasing tmp files ...
+[ done ]
+100%
+completed with warnings

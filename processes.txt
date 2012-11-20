@@ -1,0 +1,8 @@
+Installing
+Compiling
+Reinstalling
+Refactoring
+Auto-removing unused/obsolete package
+Writing
+Configuring
+Downloading package
