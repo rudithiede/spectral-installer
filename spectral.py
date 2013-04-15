@@ -1,16 +1,17 @@
 from random import choice
 from random import randint, randrange
 import decimal
+import sys
 from time import sleep
 
 # Import data
-with open('processes.txt') as f:
+with open(sys.path[0] + '/processes.txt') as f:
     processes = f.readlines()
 
-with open('names.txt') as f:
+with open(sys.path[0] + '/names.txt') as f:
     names = f.readlines()
 
-with open('doneMessages.txt') as f:
+with open(sys.path[0] + '/doneMessages.txt') as f:
     doneMessages = f.readlines()
 
 def selectName():
