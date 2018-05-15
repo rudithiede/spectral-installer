@@ -28,33 +28,52 @@ def instantProcess():
         if not name1 == name2:
             break
 
+    simpleName = False
+
     # Randomly decide how to composite names
     compositeD20 = randint(0,20)
     if compositeD20 > 0 and compositeD20 < 10:
         # Concatenate names with a hyphen
-        name = '%s-%s' % (name1, name2)
+        name = '{}-{}'.format(name1, name2)
     elif compositeD20 >= 10 and compositeD20 < 17:
         # Concatenate names
-        name = '%s%s' % (name1, name2)
+        name = '{}{}'.format(name1, name2)
     else:
-        # Use only one name
+        # Use only one name, but flag so that a version number is generated
         name = name1
+        simpleName = True
 
     # Randomly decide whether to add a version number
     addNumberD20 = randint(0,20)
     if addNumberD20 > 6 and addNumberD20 < 16:
         # Render with name and version number
-        return('%s %s-%s ...' % (process, name, versionNumber()))
+        return('{} {}{} ...'.format(process, name, versionNumber()))
     elif addNumberD20 > 16:
         # Render with composite name and version number
-        return('%s %s%s-%s ...' % (process, name, randint(0,9), versionNumber()))
+        return('{} {}{}{} ...'.format(process, name, randint(0,9), versionNumber()))
     else:
-        # Render with name only
-        return('%s %s ...' % (process, name))
+        # Render with name only, but with version number if simple name
+        if not simpleName:
+            return('{} {} ...'.format(process, name))
+        else:
+            return('{} {}{} ...'.format(process, name, versionNumber()))
 
 def versionNumber():
     """Generate a random version number."""
-    return '%s.%s.%s' % (randint(0,9), randint(0,9), randint(0,9))
+    # Add hyphen? Flip a coin
+    hyphenCoin = randint(0,1)
+    hyphen = '-'
+    if hyphenCoin == 0:
+        hyphen = ''
+
+    # Number complexity: 50% = x.x.x, 25% = x.x, 25% = x
+    complexityD20 = randint(0,20)
+    if complexityD20 >= 15 or complexityD20 <= 5:
+        return '{}{}.{}.{}'.format(hyphen, randint(0,9), randint(0,9), randint(0,9))
+    elif complexityD20 <= 10:
+        return '{}{}.{}'.format(hyphen, randint(0,9), randint(0,9))
+    else:
+        return '{}{}'.format(hyphen, randint(0,9))
 
 def doneMessage():
     """Select a random 'done' message."""
@@ -67,7 +86,7 @@ def doneMessage():
     if capitalize:
         message = message.capitalize()
     if addNewLine:
-        message = '\n%s' % message
+        message = '\n{}'.format(message)
 
     return message
 

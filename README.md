@@ -10,14 +10,6 @@ Use
 
 After downloading, run "python path/to/spectral.py" in your terminal.
 
-Warning
-=======
-
-As with all things, the way you use this project is up to you. This is all
-just for fun. We strongly recommend you NOT to use it to slack off - you WILL
-be caught, especially if your boss is a techie! We are not responsible for
-anything you do with this script!
-
 Goals
 =====
 
